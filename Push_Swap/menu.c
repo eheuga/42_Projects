@@ -7,18 +7,19 @@ void print_menu()
     printf("│  sa  sb  ss                  │\n");
     printf("│  pa  pb                      │\n");
     printf("│  ra  rb  rr                  │\n");
-    printf("│  rra rrb rrr  |  q=quitter   │\n");
+    printf("│  rra rrb rrr                 │\n");
+    printf("│  S = sort       q=quitter   │\n");
     printf("└──────────────────────────────┘\n");
     printf("Operation : ");
 }
 
-void print_stacks(t_node *a, t_node *b)
+void print_stacks(t_node *a, t_node *b, int args_nbr)
 {
     printf("\033[2J\033[H");  // efface le terminal
     t_node *ca = a;
     t_node *cb = b;
     printf("\n┌─────────────────────────────┐\n");
-    printf("│  STACK A           STACK B  │\n");
+    printf("│  STACK A  %d args STACK B  │\n", args_nbr);
     printf("├─────────────────────────────┤\n");
     if (!ca && !cb)
         printf("│  (vide)            (vide)   │\n");

@@ -135,7 +135,7 @@ void sswap (t_node **stack_a, t_node **stack_b){
 }
 
 
-void reverse_a (t_node **stack_a, int print){  // tout monte -> premier = dernier
+void rotate_a (t_node **stack_a, int print){  // tout monte -> premier = dernier
     t_node *tmp;
     t_node *last;
 
@@ -155,7 +155,7 @@ void reverse_a (t_node **stack_a, int print){  // tout monte -> premier = dernie
         printf("ra\n");
 }
 
-void reverse_b (t_node **stack_b, int print){  // tout monte -> premier = dernier
+void rotate_b (t_node **stack_b, int print){  // tout monte -> premier = dernier
     t_node *tmp;
     t_node *last;
 
@@ -175,14 +175,14 @@ void reverse_b (t_node **stack_b, int print){  // tout monte -> premier = dernie
         printf("rb\n");
 }
 
-void reverse_ab (t_node **stack_a, t_node **stack_b){
-    reverse_a(stack_a, 0);
-    reverse_b(stack_b, 0);
+void rotate_ab (t_node **stack_a, t_node **stack_b){
+    rotate_a(stack_a, 0);
+    rotate_b(stack_b, 0);
     printf("rr\n");
 }
 
 
-void rreverse_a (t_node **stack_a, int print){ // tout baisse -> dernier = premier
+void reverse_rotate_a (t_node **stack_a, int print){ // tout baisse -> dernier = premier
     t_node *tmp;
     t_node *before_last;
 
@@ -203,7 +203,7 @@ void rreverse_a (t_node **stack_a, int print){ // tout baisse -> dernier = premi
         printf("rra\n");
 }
 
-void rreverse_b (t_node **stack_b, int print){ // tout baisse -> dernier = premier
+void reverse_rotate_b (t_node **stack_b, int print){ // tout baisse -> dernier = premier
     t_node *tmp;
     t_node *before_last;
 
@@ -224,100 +224,9 @@ void rreverse_b (t_node **stack_b, int print){ // tout baisse -> dernier = premi
         printf("rrb\n");
 }
 
-void rreverse_ab (t_node **stack_a, t_node **stack_b){
-    rreverse_a(stack_a, 0);
-    rreverse_b(stack_b, 0);
+void reverse_rotate_ab (t_node **stack_a, t_node **stack_b){
+    reverse_rotate_a(stack_a, 0);
+    reverse_rotate_b(stack_b, 0);
         printf("rrr\n");
 }
-
-
-
-
-
-// int main(int ac, char **av)
-// {
-//     t_node *stack_a = NULL;
-//     t_node *stack_b = NULL;
-    
-//     for (int i = 1; i < ac; i++)
-//         add_back(&stack_a, new_node(atoi(av[i])));
-
-
-//     printf("STACK A :\n");
-//     print_list(stack_a);
-//     printf("STACK B :\n");
-//     print_list(stack_b);
-
-//     printf ("\n");
-
-//     printf ("PUSH B\n");
-//     push_b(&stack_a, &stack_b);
-
-//     printf("STACK A :\n");
-//     print_list(stack_a);
-//     printf("STACK B :\n");
-//     print_list(stack_b);
-//     printf ("\n");
-
-//     printf ("PUSH A\n");
-//     push_a(&stack_a, &stack_b);
-
-//     printf("STACK A :\n");
-//     print_list(stack_a);
-//     printf("STACK B :\n");
-//     print_list(stack_b);
-//     printf ("\n");
-
-
-//     printf ("SWAP A\n");
-//     swap_a(&stack_a, 1);
-//     print_list(stack_a);
-//     printf ("\n");
-
-//     printf ("SWAP B\n");
-//     swap_a(&stack_b, 1);
-//     print_list(stack_a);
-//     printf ("\n");
-
-//     printf ("SSWAP\n");
-//     sswap(&stack_b, &stack_a);
-//     print_list(stack_a);
-//     printf ("\n");
-
-//     printf ("REVERSE A\n");
-//     reverse_a(&stack_a, 1);
-//     print_list(stack_a);
-//     printf("\n");
-
-//     printf ("REVERSE B\n");
-//     rreverse_ab(&stack_b, 1);
-//     print_list(stack_a);
-//     printf("\n");
-
-//     printf ("REVERSE AB\n");
-//     reverse_ab(&stack_a, &stack_b);
-//     print_list(stack_a);
-//     printf("\n");
-
-
-
-//     printf ("RREVERSE A\n");
-//     rreverse_a(&stack_a, 1);
-//     print_list(stack_a);
-//     printf("\n");
-
-//     printf ("RREVERSE B\n");
-//     rreverse_a(&stack_a, 1);
-//     print_list(stack_a);
-//     printf("\n");
-
-
-//     printf ("RREVERSE AB\n");
-//     rreverse_ab(&stack_a, &stack_b);
-//     print_list(stack_a);
-//     printf("\n");
-
-//     return (0);
-// }
-
 

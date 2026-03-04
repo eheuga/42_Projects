@@ -36,3 +36,15 @@ int is_number_dup (int ac, char **str){
     }
     return (1);
 }
+
+int count_args (t_node *stack_a){
+    int i = 1;
+    t_node *current = stack_a;
+
+    while (current->next != NULL){
+        i++;
+        current = current->next;
+    }
+
+    return i;
+}
