@@ -52,6 +52,26 @@ void push_min(t_node **stack_a, t_node **stack_b, int min)
     push_b(stack_a, stack_b);
 }
 
+void little_sorter2(t_node **stack_a){
+    if (!sorted_verif(*stack_a))
+        swap_a(stack_a, 1);
+
+}
+
+void little_sorter4(t_node **stack_a, t_node **stack_b){
+    
+    int min = 0;
+    
+    min = find_min(*stack_a);
+    push_min(stack_a, stack_b, min);
+
+    little_sorter(stack_a);
+
+    push_a(stack_a, stack_b);
+
+}
+
+
 void little_sorter5 (t_node **stack_a, t_node **stack_b){
     
     int min = 0;

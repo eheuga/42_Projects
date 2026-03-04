@@ -45,8 +45,10 @@ void little_sorter(t_node **stack_a);
 
 int find_min (t_node *stack_a);
 void push_min(t_node **stack_a, t_node **stack_b, int min);
-void little_sorter5 (t_node **stack_a, t_node **stack_b);
 
+void little_sorter2(t_node **stack_a);
+void little_sorter4(t_node **stack_a, t_node **stack_b);
+void little_sorter5(t_node **stack_a, t_node **stack_b);
 
 
 // menu

@@ -3,6 +3,9 @@
 int main(int ac, char **av)
 {
     
+    if (ac == 1)
+        return (0);
+
     int i = 1;
     t_node *stack_a = NULL;
     t_node *stack_b = NULL;
@@ -33,7 +36,7 @@ int main(int ac, char **av)
         return (0);
 
 
-    args_nbr = count_args(stack_a);
+    args_nbr = ac - 1;
     
     
     
@@ -83,11 +86,21 @@ int main(int ac, char **av)
         else if (!strcmp(input, "rrr")) reverse_rotate_ab(&stack_a, &stack_b);
 
         
-        else if (args_nbr <= 3 && !strcmp(input, "S"))
-            little_sorter(&stack_a);
+        else if (!strcmp(input, "S")){
+
+            if(args_nbr == 2)
+                little_sorter2(&stack_a);
+
+            if(args_nbr == 3)
+                little_sorter(&stack_a);
                 
-        else if (args_nbr <= 5  && !strcmp(input, "S"))
-            little_sorter5(&stack_a, &stack_b);
+            else if (args_nbr == 4 )
+                little_sorter4(&stack_a, &stack_b);
+
+            else if (args_nbr == 5 )
+                little_sorter5(&stack_a, &stack_b);
+            
+        }
         
         else if (!strcmp(input, "q"))   
             { printf("Bye!\n"); break; }

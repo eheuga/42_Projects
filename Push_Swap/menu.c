@@ -15,7 +15,7 @@ void print_menu()
 
 void print_stacks(t_node *a, t_node *b, int args_nbr)
 {
-    printf("\033[2J\033[H");  // efface le terminal
+    //("\033[2J\033[H");  // efface le terminal
     t_node *ca = a;
     t_node *cb = b;
     printf("\n┌─────────────────────────────┐\n");
