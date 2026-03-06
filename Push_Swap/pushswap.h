@@ -6,10 +6,13 @@
 # include <string.h>
 # include <unistd.h>
 
+
 typedef struct s_node {
     int value;
     struct s_node *next;
 } t_node;
+
+extern int op_count; // A SUPPRIMER -> toutes les ref (operations + main)!!!
 
 // utils
 t_node  *new_node(int value);

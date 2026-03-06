@@ -1,5 +1,7 @@
 #include "pushswap.h"
 
+int op_count = 0; //    A SUPPRIMER !!!
+
 int main(int ac, char **av)
 {
        
@@ -76,13 +78,18 @@ int main(int ac, char **av)
 
     else if (args_nbr <= 500){
         chunks_size = args_nbr / 11;
-
+        chunks_count = args_nbr /chunks_size ;
+        push_chunks (&stack_a, &stack_b, chunks_count, chunks_size);
+        while (stack_b){
+            max = find_max(stack_b);
+            push_max(&stack_a, &stack_b, max);
+        }
     }
 
 
     print_stacks(stack_a, stack_b, args_nbr);
 
-
+    printf("\n - %d values %d operation(s) -\n", args_nbr, op_count);
     free_stack(stack_a);
     free_stack(stack_b);
     

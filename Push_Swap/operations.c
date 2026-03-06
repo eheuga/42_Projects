@@ -15,26 +15,6 @@ t_node *new_node (int value)
     return (node);
 }
 
-// void print_list(t_node *head)
-// {
-//     t_node *current = head;
-    
-//     if (!head)
-//         printf("NULL\n");
-    
-//     else
-//     {    
-//         while (current != NULL)
-//         {
-//         printf("%d", current->value);
-//         if (current->next != NULL)
-//             printf(" -> ");
-//         current = current->next;
-//         }   
-//         printf(" -> NULL\n");
-//     }
-
-// }
 
 void add_back (t_node **head, t_node *new){
     
@@ -71,6 +51,8 @@ void push_a (t_node **stack_a, t_node **stack_b){
     *stack_b = (*stack_b)->next;
 
     add_front(stack_a, tmp);
+
+    op_count++; // A SUPPRIMER !!!
     printf("pa\n");
 }
 
@@ -86,6 +68,9 @@ void push_b (t_node **stack_a, t_node **stack_b){
     *stack_a = (*stack_a)->next;
 
     add_front(stack_b, tmp);
+
+        op_count++; // A SUPPRIMER !!!
+
     printf("pb\n");
 
 }
@@ -122,14 +107,20 @@ void swap_b (t_node **stack_b, int print){
     tmp2->next = tmp1;
     tmp1->next = tmp3;
     *stack_b= tmp2;
-    if (print)
+    if (print){
         printf("sb\n");
+    op_count++; // A SUPPRIMER !!!
+
+    }
 
 }
 
 void sswap (t_node **stack_a, t_node **stack_b){
     swap_a(stack_a, 0); // 0 pour ne pas print sa
     swap_b(stack_b, 0);
+
+    op_count++; // A SUPPRIMER !!!
+    op_count++; // A SUPPRIMER !!!
 
     printf("ss\n");
 }
@@ -151,8 +142,11 @@ void rotate_a (t_node **stack_a, int print){  // tout monte -> premier = dernier
     last->next = tmp; // lie le dernier noeud a premier
     (*stack_a) = (*stack_a)->next; // avance la tete au deuxieme noeud
     tmp->next = NULL; // tmp devient la fin de la liste
-    if (print)
+    if (print){
         printf("ra\n");
+        
+        op_count++; // A SUPPRIMER !!!
+    }
 }
 
 void rotate_b (t_node **stack_b, int print){  // tout monte -> premier = dernier
@@ -171,13 +165,23 @@ void rotate_b (t_node **stack_b, int print){  // tout monte -> premier = dernier
     last->next = tmp; // lie le dernier noeud a premier
     (*stack_b) = (*stack_b)->next; // avance la tete au deuxieme noeud
     tmp->next = NULL; // tmp devient la fin de la liste
-    if (print)
+    
+    if (print){
         printf("rb\n");
+
+            op_count++; // A SUPPRIMER !!!
+
+    }
 }
 
 void rotate_ab (t_node **stack_a, t_node **stack_b){
     rotate_a(stack_a, 0);
     rotate_b(stack_b, 0);
+    
+    op_count++; // A SUPPRIMER !!!
+    op_count++; // A SUPPRIMER !!!
+
+    
     printf("rr\n");
 }
 
@@ -199,8 +203,11 @@ void reverse_rotate_a (t_node **stack_a, int print){ // tout baisse -> dernier =
     before_last->next = NULL; // avant dernier noeud devient dernier 
     tmp->next = *stack_a; // tmp (dernier) point vers la tete
     *stack_a = tmp; // tmp devient premier (head)
-    if (print)
+    if (print){
         printf("rra\n");
+
+            op_count++; // A SUPPRIMER !!!
+    }
 }
 
 void reverse_rotate_b (t_node **stack_b, int print){ // tout baisse -> dernier = premier
@@ -227,6 +234,10 @@ void reverse_rotate_b (t_node **stack_b, int print){ // tout baisse -> dernier =
 void reverse_rotate_ab (t_node **stack_a, t_node **stack_b){
     reverse_rotate_a(stack_a, 0);
     reverse_rotate_b(stack_b, 0);
+
+        op_count++; // A SUPPRIMER !!!
+    op_count++; // A SUPPRIMER !!!
+
         printf("rrr\n");
 }
 
