@@ -39,6 +39,9 @@ void    reverse_rotate_a(t_node **stack_a, int printstack_);
 void    reverse_rotate_b(t_node **b, int print);
 void    reverse_rotate_ab(t_node **stack_a, t_node **stack_b);
 
+// indexer
+int     *indexer(t_node **stack_a);
+void    set_index(t_node **stack_a, int *index_tab);
 
 // sorting
 void little_sorter(t_node **stack_a);
@@ -46,9 +49,16 @@ void little_sorter(t_node **stack_a);
 int find_min (t_node *stack_a);
 void push_min(t_node **stack_a, t_node **stack_b, int min);
 
-void little_sorter2(t_node **stack_a);
 void little_sorter4(t_node **stack_a, t_node **stack_b);
 void little_sorter5(t_node **stack_a, t_node **stack_b);
+
+void push_chunks (t_node **stack_a, t_node **stack_b, int chunks_count, int chunks_size);
+int find_max (t_node *stack_b);
+void push_max (t_node **stack_a, t_node **stack_b, int max);
+
+// free 
+
+void free_stack(t_node *stack);
 
 
 // menu

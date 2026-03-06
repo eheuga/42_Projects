@@ -230,3 +230,17 @@ void reverse_rotate_ab (t_node **stack_a, t_node **stack_b){
         printf("rrr\n");
 }
 
+void free_stack(t_node *stack)
+{
+    t_node *tmp;
+
+    if (!stack)
+        return ;
+    
+    while (stack)
+    {
+        tmp = stack->next;
+        free(stack);
+        stack = tmp;
+    }
+}
