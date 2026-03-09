@@ -43,7 +43,6 @@ int find_closest_in_chunk (t_node *stack_a, int chunk_min, int chunk_max){
         pos ++;
         current = current->next;
     }
-    printf("best pos = %d\n", best_pos);
     return best_pos;
 }
 
@@ -68,25 +67,23 @@ void push_chunks (t_node **stack_a, t_node **stack_b, int chunks_count, int chun
     {
         chunk_min = chunks_size * i;
         chunk_max = chunks_size * (i + 1);
-        int j = 0;
+        j = 0;
         while (j < chunks_size)
         {
-            pos = find_closest_in_chunk(*stack_a, chunk_min, chunk_max);
-            printf("push_chunks: pos=%d stack_size=%d\n", pos, stack_size);
-            if (pos <= stack_size / 2)
+            if ((*stack_a)->value >= chunk_min && (*stack_a)->value < chunk_max)
             {
-                while (pos-- > 0)
-                    rotate_a(stack_a, 1);
+                push_b(stack_a, stack_b);
+                j++;
+                stack_size--;
             }
             else
             {
-                pos = stack_size - pos;
-                while (pos-- > 0)
+                pos = find_closest_in_chunk(*stack_a, chunk_min, chunk_max);
+                if (pos <= stack_size / 2)
+                    rotate_a(stack_a, 1);
+                else
                     reverse_rotate_a(stack_a, 1);
             }
-            push_b(stack_a, stack_b);
-            j++;
-            stack_size--;
         }
         i++;
     }  
@@ -152,12 +149,3 @@ void push_max (t_node **stack_a, t_node **stack_b, int max){
     }
 
 }
-
-
-// void fat_sorter (**stack_a, **stack_b, int args_nbr){
-
-//     int chunk_size = args_nbr / 5;
-
-
-
-// }

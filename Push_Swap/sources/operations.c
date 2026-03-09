@@ -51,8 +51,6 @@ void push_a (t_node **stack_a, t_node **stack_b){
     *stack_b = (*stack_b)->next;
 
     add_front(stack_a, tmp);
-
-     // A SUPPRIMER !!!
     printf("pa\n");
 }
 
@@ -68,9 +66,6 @@ void push_b (t_node **stack_a, t_node **stack_b){
     *stack_a = (*stack_a)->next;
 
     add_front(stack_b, tmp);
-
-         // A SUPPRIMER !!!
-
     printf("pb\n");
 
 }
@@ -109,8 +104,6 @@ void swap_b (t_node **stack_b, int print){
     *stack_b= tmp2;
     if (print){
         printf("sb\n");
-     // A SUPPRIMER !!!
-
     }
 
 }
@@ -118,10 +111,6 @@ void swap_b (t_node **stack_b, int print){
 void sswap (t_node **stack_a, t_node **stack_b){
     swap_a(stack_a, 0); // 0 pour ne pas print sa
     swap_b(stack_b, 0);
-
-     // A SUPPRIMER !!!
-     // A SUPPRIMER !!!
-
     printf("ss\n");
 }
 
@@ -144,8 +133,6 @@ void rotate_a (t_node **stack_a, int print){  // tout monte -> premier = dernier
     tmp->next = NULL; // tmp devient la fin de la liste
     if (print){
         printf("ra\n");
-        
-         // A SUPPRIMER !!!
     }
 }
 
@@ -168,20 +155,13 @@ void rotate_b (t_node **stack_b, int print){  // tout monte -> premier = dernier
     
     if (print){
         printf("rb\n");
-
-             // A SUPPRIMER !!!
-
     }
 }
 
 void rotate_ab (t_node **stack_a, t_node **stack_b){
     rotate_a(stack_a, 0);
     rotate_b(stack_b, 0);
-    
-     // A SUPPRIMER !!!
-     // A SUPPRIMER !!!
 
-    
     printf("rr\n");
 }
 
@@ -205,8 +185,6 @@ void reverse_rotate_a (t_node **stack_a, int print){ // tout baisse -> dernier =
     *stack_a = tmp; // tmp devient premier (head)
     if (print){
         printf("rra\n");
-
-             // A SUPPRIMER !!!
     }
 }
 
@@ -234,11 +212,7 @@ void reverse_rotate_b (t_node **stack_b, int print){ // tout baisse -> dernier =
 void reverse_rotate_ab (t_node **stack_a, t_node **stack_b){
     reverse_rotate_a(stack_a, 0);
     reverse_rotate_b(stack_b, 0);
-
-         // A SUPPRIMER !!!
-     // A SUPPRIMER !!!
-
-        printf("rrr\n");
+    printf("rrr\n");
 }
 
 void free_stack(t_node *stack)

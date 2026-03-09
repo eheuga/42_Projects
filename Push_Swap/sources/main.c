@@ -64,7 +64,7 @@ int main(int ac, char **av)
     }
     else if (args_nbr <= 500)
     {
-        chunks_size = args_nbr / 25;
+        chunks_size = args_nbr / 12;
         chunks_count = args_nbr / chunks_size;
         push_chunks(&stack_a, &stack_b, chunks_count, chunks_size);
         while (stack_b)
