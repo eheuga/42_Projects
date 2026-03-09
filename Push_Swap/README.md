@@ -31,8 +31,8 @@ on which is closer.
 ## Performance
 | Input size | Operations | 42 limit |
 |------------|------------|----------|
-| 100 values | ~750 ops   | 700 (5pts) / 900 (4pts) |
-| 500 values | ~7300 ops  | 5500 (5pts) |
+| 100 values | ~750 ops   | 700      |
+| 500 values | ~7300 ops  | 5500     |
 
 The 500 values benchmark does not reach the bonus score.
 This is why I moved on to the Turkish sort algorithm (see `turkish-sort` branch).
